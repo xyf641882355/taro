@@ -1,22 +1,22 @@
 /* eslint-disable camelcase */
-import './polyfill'
-import Component from './component'
-import { get as internal_safe_get } from './internal/safe-get'
-import { set as internal_safe_set } from './internal/safe-set'
-import { inlineStyle as internal_inline_style } from './internal/inline-style'
-import { getOriginal as internal_get_original } from './internal/get-original'
-import { getEnv, ENV_TYPE } from './env'
-import Events from './events'
-import render from './render'
-import { createRef, commitAttachRef, detachAllRef, RefsArray } from './ref'
-import Link from './interceptor'
-import * as interceptors from './interceptor/interceptors'
+import "./polyfill";
+import Component from "./component";
+import { get as internal_safe_get } from "./internal/safe-get";
+import { set as internal_safe_set } from "./internal/safe-set";
+import { inlineStyle as internal_inline_style } from "./internal/inline-style";
+import { getOriginal as internal_get_original } from "./internal/get-original";
+import { getEnv, ENV_TYPE } from "./env";
+import Events from "./events";
+import render from "./render";
+import { createRef, commitAttachRef, detachAllRef, RefsArray } from "./ref";
+import Link from "./interceptor";
+import * as interceptors from "./interceptor/interceptors";
 import {
   noPromiseApis,
   onAndSyncApis,
   otherApis,
-  initPxTransform
-} from './native-apis'
+  initPxTransform,
+} from "./native-apis";
 import {
   useEffect,
   useLayoutEffect,
@@ -35,23 +35,24 @@ import {
   usePageScroll,
   useResize,
   useShareAppMessage,
+  useShareTimeline,
   useTabItemTap,
   useRouter,
   useScope,
-  forceUpdateCallback as internal_force_update
-} from './hooks'
-import { Current } from './current'
-import { createContext } from './create-context'
-import { memo } from './memo'
+  forceUpdateCallback as internal_force_update,
+} from "./hooks";
+import { Current } from "./current";
+import { createContext } from "./create-context";
+import { memo } from "./memo";
 
-let eventCenter
-if (process.env.TARO_ENV === 'alipay') {
+let eventCenter;
+if (process.env.TARO_ENV === "alipay") {
   if (!my.taroEventCenter) {
-    my.taroEventCenter = new Events()
+    my.taroEventCenter = new Events();
   }
-  eventCenter = my.taroEventCenter
+  eventCenter = my.taroEventCenter;
 } else {
-  eventCenter = new Events()
+  eventCenter = new Events();
 }
 
 export {
@@ -88,6 +89,7 @@ export {
   usePageScroll,
   useResize,
   useShareAppMessage,
+  useShareTimeline,
   useTabItemTap,
   useRouter,
   useScope,
@@ -98,8 +100,8 @@ export {
   invokeEffects,
   useContext,
   createContext,
-  memo
-}
+  memo,
+};
 
 export default {
   Component,
@@ -135,6 +137,7 @@ export default {
   usePageScroll,
   useResize,
   useShareAppMessage,
+  useShareTimeline,
   useTabItemTap,
   useRouter,
   useScope,
@@ -145,5 +148,5 @@ export default {
   invokeEffects,
   useContext,
   createContext,
-  memo
-}
+  memo,
+};

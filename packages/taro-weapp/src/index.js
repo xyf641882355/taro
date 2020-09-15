@@ -23,6 +23,7 @@ import {
   usePageScroll,
   useResize,
   useShareAppMessage,
+  useShareTimeline,
   useTabItemTap,
   useRouter,
   useScope,
@@ -32,17 +33,17 @@ import {
   useImperativeHandle,
   useContext,
   createContext,
-  memo
-} from '@tarojs/taro'
-import { shallowEqual } from '@tarojs/utils'
+  memo,
+} from "@tarojs/taro";
+import { shallowEqual } from "@tarojs/utils";
 
-import Component from './component'
-import PureComponent from './pure-component'
-import createApp from './create-app'
-import createComponent from './create-component'
-import initNativeApi from './native-api'
-import propsManager from './propsManager'
-import { getElementById, genCompid } from './util'
+import Component from "./component";
+import PureComponent from "./pure-component";
+import createApp from "./create-app";
+import createComponent from "./create-component";
+import initNativeApi from "./native-api";
+import propsManager from "./propsManager";
+import { getElementById, genCompid } from "./util";
 
 export const Taro = {
   Component,
@@ -76,6 +77,7 @@ export const Taro = {
   usePageScroll,
   useResize,
   useShareAppMessage,
+  useShareTimeline,
   useTabItemTap,
   useRouter,
   useScope,
@@ -86,9 +88,9 @@ export const Taro = {
   useContext,
   createContext,
   memo,
-  shallowEqual
-}
+  shallowEqual,
+};
 
-export default Taro
+export default Taro;
 
-initNativeApi(Taro)
+initNativeApi(Taro);
